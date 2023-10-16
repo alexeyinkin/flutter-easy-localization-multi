@@ -1,9 +1,7 @@
-<p align="center">
 [![Pub Package](https://img.shields.io/pub/v/easy_localization_multi.svg)](https://pub.dev/packages/easy_localization_multi)
 [![GitHub](https://img.shields.io/github/license/alexeyinkin/flutter-easy-localization-multi)](https://github.com/alexeyinkin/flutter-easy-localization-multi/blob/main/LICENSE)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/alexeyinkin/flutter-easy-localization-multi?style=flat-square)](https://www.codefactor.io/repository/github/alexeyinkin/flutter-easy-localization-multi)
 [![Support Chat](https://img.shields.io/badge/support%20chat-telegram-brightgreen)](https://ainkin.com/chat)
-</p>
 
 A loader for
 [easy_localization_loader](https://pub.dev/packages/easy_localization_loader) package

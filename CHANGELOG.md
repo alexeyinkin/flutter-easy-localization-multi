@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Fix readme formatting.
+
 ## 0.1.1
 
 - Added an example.
