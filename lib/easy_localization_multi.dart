@@ -7,10 +7,9 @@ import 'package:easy_localization/easy_localization.dart';
 class MultiAssetLoader extends AssetLoader {
   /// The loaders. Results from latter loaders get merged or overwrite
   /// the results from the earlier ones.
-  // https://github.com/aissat/easy_localization/issues/524
-  final List<dynamic> loaders;
+  final List<AssetLoader> loaders;
 
-  ///
+  /// Combines the results of multiple loaders.
   const MultiAssetLoader(this.loaders);
 
   @override
@@ -19,7 +18,6 @@ class MultiAssetLoader extends AssetLoader {
     final result = <String, dynamic>{};
 
     for (final loader in loaders) {
-      // ignore: avoid_dynamic_calls
       futures.add(loader.load(path, locale));
     }
 
@@ -27,26 +25,5 @@ class MultiAssetLoader extends AssetLoader {
 
     maps.whereNotNull().forEach(result.addAllRecursive);
     return result;
-  }
-}
-
-///
-extension _MapExtension<K> on Map<K, dynamic> {
-  /// Merges entries from [other].
-  /// Unlike [addAll], tries to recursively merge an entry
-  /// if it is a compatible map.
-  void addAllRecursive(Map<K, dynamic> other) {
-    for (final entry in other.entries) {
-      final oldValue = this[entry.key];
-      final newValue = entry.value;
-
-      if (oldValue is Map<K, dynamic> && newValue is Map<K, dynamic>) {
-        oldValue.addAllRecursive(newValue);
-
-        continue;
-      }
-
-      this[entry.key] = newValue;
-    }
   }
 }

@@ -1,6 +1,6 @@
 name: easy_localization_multi
 description: A loader for easy_localization package that merges data from multiple other loaders.
-version: 0.1.2
+version: 0.2.0
 repository: https://github.com/alexeyinkin/flutter-easy-localization-multi
 
 environment:
@@ -9,8 +9,8 @@ environment:
 
 dependencies:
   collection: ^1.16.0
-  easy_localization: ^3.0.1
+  easy_localization: ^3.0.7
   flutter: { sdk: flutter }
 
 dev_dependencies:
-  total_lints: ^3.1.1
+  total_lints: ^3.4.0
